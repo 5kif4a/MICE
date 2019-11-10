@@ -1,0 +1,10 @@
+*.config
+*.sqlite3
+migrations/
+*.pyc
+venv/
+__pycache__/
+.idea/
+*.log
+media/
+.env

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container">
+    <div class="row">
+       <div class="col">
+           <h1 class="text-center">Event Form</h1>
+            <div class="alert alert-dismissible alert-primary">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h4 class="alert-heading">Hello</h4>
+  <p class="mb-0">Information form for upcoming events. It will be convenient for all of us if you fill it out</p>
+</div>
+<form class="p-2 m-2 border border-primary" method="post">
+    <p class="text-center"></p>
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="form-row">
+            <div class="form-group col-sm">
+                {{ form.name|as_crispy_field }}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                {{ form.date|as_crispy_field }}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                {{ form.place|as_crispy_field }}
+            </div>
+    </div>
+        <button type="submit" class="btn btn-success mt-1">Submit</button>
+    </div>
+</form>
+</div>
+    </div>
+    </div>
+{% endblock %}

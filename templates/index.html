@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-3">All events and venues in one place</h1>
+  <p class="lead">We tried and collected all the necessary information for your comfort and pastime</p>
+  <hr class="my-4">
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
+    <div class="row">
+    <div class="col text-center">
+        <a href="/organizer" style="text-decoration: none;">
+            <img class=" mx-auto d-block icon" src="{% static 'img/calendar.svg' %}" width="300px">
+            <h2>You organizer?</h2>
+        </a>
+    </div>
+    <div class="col text-center">
+        <a href="/participant" style="text-decoration: none;">
+            <img class="mx-auto d-block icon" src="{% static 'img/participant.svg' %}" width="300px">
+            <h2>You participant?</h2>
+        </a>
+    </div>
+</div>
+<div class="jumbotron mb-0" id="news">
+    <h1 class="text-center">Last news</h1>
+    <div class="card m-1">
+        <div class="row no-gutters">
+            <div class="col-2">
+                <img src="{% static 'img/news.svg' %}" class="img-thumbnail">
+            </div>
+            <div class="col-10">
+                <div class="card-body p-1">
+        <h5 class="card-title">Hackathon "Travel Tech" in AITU!</h5>
+    <p class="card-text">Can you code and quickly solve problems? Register and participate in the hackathon</p>
+  </div>
+                <a href="#" class="btn btn-primary">Read more</a>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+    5 days ago
+  </div>
+</div>
+    <div class="card m-1">
+        <div class="row no-gutters">
+            <div class="col-2">
+                <img src="{% static 'img/news.svg' %}" class="img-thumbnail">
+            </div>
+            <div class="col-10">
+                <div class="card-body p-1">
+        <h5 class="card-title">Global Summit in Nur-Sultan</h5>
+    <p class="card-text">We are glad to inform you that the registration for the Global Summit</p>
+  </div>
+                <a href="#" class="btn btn-primary">Read more</a>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+    5 days ago
+  </div>
+</div>
+    <div class="card m-1">
+        <div class="row no-gutters">
+            <div class="col-2">
+                <img src="{% static 'img/news.svg' %}" class="img-thumbnail">
+            </div>
+            <div class="col-10">
+                <div class="card-body p-1">
+       <h5 class="card-title">Call for new partners at "MICE Nur-Sultan" partnership program</h5>
+    <p class="card-text">We are happy to invite all to become an official partner of Convention Bureau!</p>
+  </div>
+                <a href="#" class="btn btn-primary">Read more</a>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+    5 days ago
+  </div>
+</div>
+    <div>
+  <ul class="pagination justify-content-center mt-3">
+    <li class="page-item disabled">
+      <a class="page-link" href="#">&laquo;</a>
+    </li>
+    <li class="page-item active">
+      <a class="page-link" href="#">1</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">3</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">4</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">5</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">&raquo;</a>
+    </li>
+  </ul>
+</div>
+</div>
+{% endblock %}

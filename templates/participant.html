@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+         <!-- Load Leaflet from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+  crossorigin=""></script>
+
+
+  <!-- Load Esri Leaflet from CDN -->
+  <script src="https://unpkg.com/esri-leaflet@2.3.1/dist/esri-leaflet.js"
+  integrity="sha512-Np+ry4Dro5siJ1HZ0hTwn2jsmu/hMNrYw1EIK9EjsEVbDge4AaQhjeTGRg2ispHg7ZgDMVrSDjNrzH/kAO9Law=="
+  crossorigin=""></script>
+
+
+  <!-- Load Esri Leaflet Geocoder from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.1/dist/esri-leaflet-geocoder.css"
+    integrity="sha512-v5YmWLm8KqAAmg5808pETiccEohtt8rPVMGQ1jA6jqkWVydV5Cuz3nJ9fQ7ittSxvuqsvI9RSGfVoKPaAJZ/AQ=="
+    crossorigin="">
+  <script src="https://unpkg.com/esri-leaflet-geocoder@2.3.1/dist/esri-leaflet-geocoder.js"
+    integrity="sha512-YUgyCwPXzSCFuYgNIsumhktAolzwxETPBwc+xAgJOW7B3/1r1EKf0WYpmNo+6a/9C/EAF9RxYnMynEmd+77fTA=="
+    crossorigin=""></script>
+{% endblock %}
+{% block content %}
+    <div class="search-form p-1">
+    <h5>Search what you want</h5>
+        <input>
+        <button class="btn btn-outline-secondary"><i class="fas fa-filter"></i><br></button>
+    <button type="submit" class="btn btn-success mt-2">Search</button>
+</div>
+<div id="map" class="map"></div>
+{% endblock %}
+
+{% block script %}
+
+<script src="{% static "js/script.js" %}"></script>
+    <script>
+    var markers = [
+  {
+    "name": "Спектакль театра «Интериус» «В главной роли»",
+    "date": "17 ноября 19.30",
+    "lat": 51.1231,
+    "lng": 71.4636
+  },
+  {
+    "name": "А. Айларов «С?рінген с?рбойда?» комедия",
+    "date": "17 ноября 19.00",
+    "lat": 51.1689,
+    "lng": 71.4174
+  },
+  {
+    "name": "Спектакль «Мерекелік меню»",
+    "date": "17 ноября 18:00",
+    "lat": 51.09,
+    "lng": 71.4217
+  },
+  {
+    "name": "Матч по хоккею с шайбой между командами ХК «Снежные Барсы» – ХК «Спутник» в рамках Чемпионата МХЛ сезона 2019-2020 гг",
+    "date": "17-18 ноября 17.00",
+    "lat": 51.1092,
+    "lng": 71.3957
+  },
+  {
+    "name": "Национальный Совет общественного доверия",
+    "date": "17-20 ноября 10.00-18.00",
+    "lat": 51.1206,
+    "lng": 71.4721
+  },
+  {
+    "name": "Многожанровый детский конкурс «Магия искусства»",
+    "date": "17 ноября 9.00",
+    "lat": 51.1701,
+    "lng": 71.4278
+  }
+]
+    for(var i=0; i<markers.length; i++){
+        L.marker([markers[i].lat, markers[i].lng]).addTo(map)
+    .bindPopup(`<a href="#">${markers[i].name}</a><br><p>${markers[i].date}</p>`)
+    .openPopup();
+    }
+    </script>
+{% endblock %}
